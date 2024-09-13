@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('BIRTHDATE', 15);
             $table->string('CATEGORY', 3);
             $table->string('PHOTO', 100)->nullable();
+            $table->boolean('IsActive')->default(1);
             $table->timestamps();
         });
     }
