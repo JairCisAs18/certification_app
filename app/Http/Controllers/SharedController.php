@@ -12,8 +12,8 @@ use Illuminate\Http\Request;
 class SharedController extends Controller
 {
     public function getOperators(){
-        $operators = Operator::select('id', 'EMPLOYEE_ID', 'AREA_ID', 'CATEGORY_ID', 'NAME', 'AGE', 'BIRTHDATE', 'HIRING_DATE', 'PHOTO', 'IsActive')->where('IsActive', 1)->orderBy('EMPLOYEE_ID')->get();
-        return view('operators')->with('operators', $operators);
+        $areas = Area::select('id', 'NAME')->get();
+        return view('operators')->with('areas', $areas);
     }
 
     public function addOperatorView(){

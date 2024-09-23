@@ -27,9 +27,9 @@
     <br><br>
     @foreach ($areas as $a)
         <h1>{{$a->NAME}}</h1>
-    @endforeach
-    @foreach ($stations as $s)
-        <a href="">{{$s->NAME}}</a>
-        <br>
+        @foreach ($a->getStationsByArea() as $s)
+            <p>{{$s->id}}</p>
+            <p>{{$s->NAME}}</p>
+        @endforeach
     @endforeach
 </x-app-layout>
