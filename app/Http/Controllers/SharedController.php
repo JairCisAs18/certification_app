@@ -6,6 +6,8 @@ use App\Models\Area;
 use App\Models\Category;
 use App\Models\Certification;
 use App\Models\File;
+use App\Models\Station;
+use App\Models\StationHasCertification;
 use App\Models\Video;
 use Illuminate\Http\Request;
 

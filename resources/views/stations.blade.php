@@ -26,10 +26,22 @@
     </div>
     <br><br>
     @foreach ($areas as $a)
-        <h1>{{$a->NAME}}</h1>
-        @foreach ($a->getStationsByArea() as $s)
-            <p>{{$s->id}}</p>
-            <p>{{$s->NAME}}</p>
-        @endforeach
+        <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample{{$a->id}}" role="button" aria-expanded="false" aria-controls="collapseExample{{$a->id}}">{{$a->NAME}}</a><br><br>
+        <div class="collapse" id="collapseExample{{$a->id}}">
+            <div class="card card-body">
+                <table class="table">
+                    <thead class="table-primary">
+                        <th class="text-center fs-6">Estación</th>
+                    </thead>
+                    <tbody>
+                        @foreach ($a->getStationsByArea() as $s)
+                            <tr>
+                                <td class="text-center align-middle fs-6">{{$s->NAME}}</td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
     @endforeach
 </x-app-layout>
