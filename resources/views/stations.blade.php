@@ -31,12 +31,12 @@
             <div class="card card-body">
                 <table class="table">
                     <thead class="table-primary">
-                        <th class="text-center fs-6">Estación</th>
+                        <th class="text-center fs-5">Estación</th>
                     </thead>
                     <tbody>
                         @foreach ($a->getStationsByArea() as $s)
                             <tr>
-                                <td class="text-center align-middle fs-6">{{$s->NAME}}</td>
+                                <td class="text-center align-middle fs-5"><a href="{{ route('stationInfoView', $s->id) }}">{{$s->NAME}}</a></td>
                             </tr>
                         @endforeach
                     </tbody>

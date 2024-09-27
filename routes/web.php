@@ -38,7 +38,7 @@ Route::middleware('role:Human Resources')->group(function (){
     Route::get('/human-resources/operators/change-to-inactive/{id}', [SharedController::class, 'changeToInactive'])->name('changeToInactive');
     Route::get('/human-resources/stations', [HRController::class, 'getStations'])->name('stationsView');
     Route::post('/human-resources/stations/add-station', [HRController::class, 'addStation'])->name('addStation');
-    Route::get('/human-resources/stations/{id}', [HRController::class, 'assignOperator'])->name('assignOperator');
+    Route::get('/human-resources/stations/{id}', [HRController::class, 'getStationInfo'])->name('stationInfoView');
 });
 
 Route::get('/dashboard', function () {

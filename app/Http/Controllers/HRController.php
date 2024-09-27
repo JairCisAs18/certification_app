@@ -37,4 +37,10 @@ class HRController extends Controller
         return redirect()->route('stationsView');
     }
 
+    public function getStationInfo($id){
+        $shc = StationHasCertification::select('id', 'STATION_ID', 'CERTIFICATION_ID')->where('STATION_ID', $id)->get();
+        $cert = Certification::all();
+        return view('certifications');
+    }
+
 }

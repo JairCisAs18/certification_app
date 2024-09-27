@@ -9,4 +9,9 @@ class StationHasCertification extends Model
 {
     use HasFactory;
     protected $table = 'station_has_certification';
+
+    public function getCertifications(){
+        $cert = Certification::select('id', 'NAME')->where('id', $this->CERTIFICATION_ID);
+        return $cert;
+    }
 }

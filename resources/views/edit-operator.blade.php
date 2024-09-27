@@ -27,6 +27,7 @@
                 <x-input-label for="birthdate" :value="__('Fecha de nacimiento')"/>
                 <x-text-input id="birthdate" class="block mt-1 w-full" type="text" name="birthdate" autocomplete="off" value="{{$operator->BIRTHDATE}}"/>
             </div>
+
             <div class="mt-4">
                 <select name="category" id="">
                     <option value="{{$operator->CATEGORY_ID}}">{{$operator->getCategory()}}</option>
